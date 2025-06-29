@@ -1,18 +1,22 @@
 {
   "name": "top-drives-card-generator",
+  "homepage": "https://jokairo.github.io/top-drives-card-generator/",
   "version": "1.0.0",
   "private": true,
   "type": "module",
   "scripts": {
     "build": "rsbuild build",
     "dev": "rsbuild dev --open",
-    "preview": "rsbuild preview"
+    "preview": "rsbuild preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@mantine/core": "^8.1.1",
     "@mantine/hooks": "^8.1.1",
     "@tabler/icons-react": "^3.34.0",
+    "gh-pages": "^6.3.0",
     "html-to-image": "^1.11.13",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
