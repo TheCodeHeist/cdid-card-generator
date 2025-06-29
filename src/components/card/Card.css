@@ -1,0 +1,9 @@
+.card-container {
+    transform-origin: top left;
+}
+.card {
+    position: relative;
+    border-radius: 30px;
+    overflow: hidden;
+    background-repeat: no-repeat;
+}

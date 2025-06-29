@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    margin: 0;
+    color: white;
+    background-color: #222831;
+    --blur: 60px;
+}
+
+.content {
+    display: flex;
+    min-height: 100vh;
+    line-height: 1.1;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    padding-block: 2rem;
+}
+
+.content h1 {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+@media screen and (max-width: 800px) {
+    .content h1 {
+        font-size: 1.25rem;
+    }
+}
+
+.content p {
+    font-size: 1.2rem;
+    font-weight: 400;
+    opacity: 0.5;
+}
+
+.mantine-Select-option{
+    color: black;
+}
+
+/* RQ themes */
+.theme-legendary {
+    --rq-color: #febc10;
+}
+.theme-epic {
+    --rq-color: #8b5bff;
+}
+.theme-ultra-rare {
+    --rq-color: #fd3639;
+}
+.theme-super-rare {
+    --rq-color: #fff62b;
+}
+.theme-rare {
+    --rq-color: #19c8ff;
+}
+.theme-uncommon {
+    --rq-color: #77f273;
+}
+.theme-common {
+    --rq-color: #828282;
+}
