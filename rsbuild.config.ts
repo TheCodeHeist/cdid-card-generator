@@ -14,7 +14,7 @@ export default defineConfig({
         })
     ],
     html: {
-        template: './public/index.html',
+        template: './index.html',
     },
     output: {
         distPath: {
