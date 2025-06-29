@@ -20,5 +20,6 @@ export default defineConfig({
         distPath: {
             root: 'build',
         },
+        assetPrefix: '/top-drives-card-generator/',
     },
 });
