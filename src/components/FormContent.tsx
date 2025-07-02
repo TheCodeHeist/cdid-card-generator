@@ -1,4 +1,4 @@
-import { FileInput, NumberInput, Slider, TextInput, Select, Grid, Divider, Stack, InputLabel } from "@mantine/core";
+import { FileInput, NumberInput, Slider, TextInput, Select, Grid, Divider, Stack, InputLabel, Button } from "@mantine/core";
 import type { FormsData } from "../App";
 
 interface FormContentI {
@@ -6,11 +6,12 @@ interface FormContentI {
     handleImageChange: (file: File | null) => void;
     handleLogoChange: (file: File | null) => void;
     updateField: <K extends keyof FormsData>(key: K, value: FormsData[K]) => void;
+	fitImageToCard: () => void;
 	exporting: boolean;
 }
 
-const FormContent = ({ formData, handleImageChange, handleLogoChange, updateField, exporting }: FormContentI) => {
-    return (
+const FormContent = ({ formData, handleImageChange, handleLogoChange, updateField, fitImageToCard, exporting }: FormContentI) => {
+	return (
         <>
             <Divider label="Images" labelPosition="center" />
 			<Grid>
@@ -100,6 +101,15 @@ const FormContent = ({ formData, handleImageChange, handleLogoChange, updateFiel
 							disabled={exporting}
 						/>
 					</Stack>
+				</Grid.Col>
+				<Grid.Col span={4}>
+					<Button
+						onClick={fitImageToCard}
+						fullWidth
+						disabled={exporting}
+					>
+						Fit Image to Card
+					</Button>
 				</Grid.Col>
 			</Grid>
 

@@ -7,6 +7,7 @@ import FormContent from "./components/FormContent";
 import { IconBrandGithub } from '@tabler/icons-react';
 
 import "./App.css";
+import { getFitImageToCardPercentage } from "./utils/utils";
 
 export const CARD_WIDTH = 1280;
 export const CARD_HEIGHT = 795;
@@ -14,6 +15,7 @@ export const CARD_HEIGHT = 795;
 export type FormsData = {
 	image: string | null;
 	imageFile: File | null;
+	imageDimension: { width: number, height: number } | null;
 	logo: string | null;
 	logoFile: File | null;
 	bgSize: number;
@@ -35,6 +37,7 @@ export type FormsData = {
 const defaultFormData: FormsData = {
 	image: null,
 	imageFile: null,
+	imageDimension: null,
 	logo: null,
 	logoFile: null,
 	bgSize: 100,
@@ -89,14 +92,33 @@ const App = () => {
 		if (file) {
 			const reader = new FileReader()
 			reader.onload = () => {
-				updateField('image', reader.result as string);
-				updateField('imageFile', file);
+				const imageSrc = reader.result as string;
+
+				// Load image to get its dimensions
+				const img = new Image();
+				img.onload = () => {
+					const width = img.naturalWidth;
+					const height = img.naturalHeight;
+
+					const percentage = getFitImageToCardPercentage(width, height);
+					setFormData((prev) => ({
+						...prev,
+						image: imageSrc,
+						imageFile: file,
+						imageDimension: { width: width, height: height },
+						bgSize: percentage,
+						bgX: 50,
+						bgY: 50,
+					}));
+				}
+				img.src = imageSrc;
 			}
 			reader.readAsDataURL(file)
 		}
 		else {
 			updateField('image', null);
 			updateField('imageFile', null);
+			updateField("imageDimension", null);
 		}
 	}
 
@@ -113,6 +135,20 @@ const App = () => {
 			updateField('logo', null);
 			updateField('logoFile', null);
 		}
+	}
+
+	const fitImageToCard = () => {
+		if (!formData.imageDimension) return;
+		const { width, height } = formData.imageDimension;
+
+		const percentage = getFitImageToCardPercentage(width, height);
+
+		setFormData((prev) => ({
+			...prev,
+			bgSize: percentage,
+			bgX: 50,
+			bgY: 50,
+		}));
 	}
 
 	return (
@@ -147,6 +183,7 @@ const App = () => {
 						handleLogoChange={handleLogoChange}
 						updateField={updateField}
 						exporting={exporting}
+						fitImageToCard={fitImageToCard}
 					/>
 				</Box>
 			</Group>

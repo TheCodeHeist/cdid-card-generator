@@ -1,3 +1,5 @@
+import { CARD_WIDTH, CARD_HEIGHT } from "../App";
+
 export const valueToNumber = (value: any) => {
     return isNaN(Number(value)) ? 0 : Number(value);
 }
@@ -21,3 +23,9 @@ export const getRqSymbol = (rq: number) => {
     if (rq >= 20) return "E";
     return "F";
 }
+
+export const getFitImageToCardPercentage = (imageWidth: number, imageHeight: number) => {
+	const scaledHeight = (imageHeight / imageWidth) * CARD_WIDTH;
+	const scale = CARD_HEIGHT / scaledHeight;
+	return Math.max(100, scale * 100);
+};
