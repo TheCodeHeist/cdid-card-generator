@@ -1,5 +1,6 @@
 import { FileInput, NumberInput, Slider, TextInput, Select, Grid, Divider, Stack, InputLabel, Button } from "@mantine/core";
 import type { FormsData } from "../App";
+import { useMediaQuery } from "@mantine/hooks";
 
 interface FormContentI {
     formData: FormsData;
@@ -11,6 +12,9 @@ interface FormContentI {
 }
 
 const FormContent = ({ formData, handleImageChange, handleLogoChange, updateField, fitImageToCard, exporting }: FormContentI) => {
+	const isMobile = useMediaQuery("(min-width: 700px)");
+	const fitImageButtonText = isMobile ? "Fit Image to Card" : "Fit Image";
+
 	return (
         <>
             <Divider label="Images" labelPosition="center" />
@@ -108,7 +112,7 @@ const FormContent = ({ formData, handleImageChange, handleLogoChange, updateFiel
 						fullWidth
 						disabled={exporting}
 					>
-						Fit Image to Card
+						{fitImageButtonText}
 					</Button>
 				</Grid.Col>
 			</Grid>
