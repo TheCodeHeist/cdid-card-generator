@@ -25,38 +25,37 @@ const CardContent = ({ formData, exporting }: CardContentI) => {
     return (
         <div className={`card-content ${getRqThemeClass(rq)}`}>
             { /* Right side */ }
-            <div className="right-side">
-                <div className={ exporting ? "box render" : "box" }>
-                    { exporting && <CardBlurry formData={formData} top={-100} left={-1280 + 263} /> }
-                    <div className="values">
-                        <span className="value">{topSpeed}</span>
-                        <span className="label">TOP SPEED</span>
+            <div className={ exporting ? "right-side render" : "right-side" }>
+                { exporting && (
+                    <div className="blur">
+                        <CardBlurry formData={formData} top={-95} left={-1280 + 263} />
                     </div>
-                </div>
-                <div className={ exporting ? "box render" : "box" }>
-                    { exporting && <CardBlurry formData={formData} top={-275} left={-1280 + 263} /> }
-                    <div className="values">
-                        <span className="value">{zeroToSixty}</span>
-                        <span className="label">0-60MPH</span>
-                    </div>
-                </div>
-                <div className={ exporting ? "box render" : "box" }>
-                    { exporting && <CardBlurry formData={formData} top={-450} left={-1280 + 263} /> }
-                    <div className="values">
-                        <span className="value">{handling}</span>
-                        <span className="label">HANDLING</span>
-                    </div>
-                </div>
-                <div className={ exporting ? "box bottom render" : "box bottom" }>
-                    { exporting && (
-                        <div className="blur-container">
-                            <CardBlurry formData={formData} top={-625} left={-1280 + 263} />
+                )}
+                <div className="box-container">
+                    <div className="box">
+                        <div className="values">
+                            <span className="value">{topSpeed}</span>
+                            <span className="label">TOP SPEED</span>
                         </div>
-                    )}
-                    <div className="values">
-                        <div className="fade"></div>
-                        <span className="value"><b>{drivetrain1}</b>{drivetrain2}</span>
-                        <span className="label">DRIVE</span>
+                    </div>
+                    <div className="box">
+                        <div className="values">
+                            <span className="value">{zeroToSixty}</span>
+                            <span className="label">0-60MPH</span>
+                        </div>
+                    </div>
+                    <div className="box">
+                        <div className="values">
+                            <span className="value">{handling}</span>
+                            <span className="label">HANDLING</span>
+                        </div>
+                    </div>
+                    <div className="box bottom">
+                        <div className="values">
+                            <div className="fade"></div>
+                            <span className="value"><b>{drivetrain1}</b>{drivetrain2}</span>
+                            <span className="label">DRIVE</span>
+                        </div>
                     </div>
                 </div>
             </div>

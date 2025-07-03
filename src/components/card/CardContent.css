@@ -1,34 +1,38 @@
-.card .card-content-content {
-    width: 100%;
-    height: calc(100% - 95px);
-    position: relative;
-}
-
 /* Right side */
 .card .card-content .right-side {
     position: absolute;
     width: 263px;
     height: 100%;
     right: 0;
+    -webkit-backdrop-filter: blur(var(--blur));
+    backdrop-filter: blur(var(--blur));
+}
+.card .card-content .right-side.render {
+    -webkit-backdrop-filter: unset;
+    backdrop-filter: unset;
+}
+
+.card .card-content .right-side .blur {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background-color: black;
+}
+
+.card .card-content .right-side .box-container {
+    height: 100%;
     display: flex;
     flex-direction: column;
-    margin-block: 5px;
+    padding-top: 5px;
     gap: 5px;
 }
 
 .card .card-content .right-side .box {
     width: 100%;
     height: 170px;
-    -webkit-backdrop-filter: blur(var(--blur));
-    backdrop-filter: blur(var(--blur));
     z-index: 1;
-    overflow: hidden;
     position: relative;
-}
-.card .card-content .right-side .box.render {
-    background: black;
-    -webkit-backdrop-filter: unset;
-    backdrop-filter: unset;
 }
 
 .card .card-content .right-side .box .values {
@@ -63,10 +67,6 @@
     z-index: 1;
 }
 
-.card .card-content .right-side .box.bottom {
-    overflow: unset;
-}
-
 .card .card-content .right-side .box.bottom .value {
     font-weight: 400;
     font-size: 92px;
@@ -81,17 +81,6 @@
     left: -1000;
     bottom: 0;
     background: linear-gradient(transparent, rgba(0, 0, 0, 0.5));
-}
-
-.card .card-content .right-side .box.bottom .label {
-    z-index: 99;
-}
-
-.card .card-content .right-side .box.bottom .blur-container {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    overflow: hidden;
 }
 
 /* Left side */
