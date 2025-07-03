@@ -28,4 +28,26 @@ export const getFitImageToCardPercentage = (imageWidth: number, imageHeight: num
 	const scaledHeight = (imageHeight / imageWidth) * CARD_WIDTH;
 	const scale = CARD_HEIGHT / scaledHeight;
 	return Math.max(100, scale * 100);
-};
+}
+
+export const getBlurredImageDataUrl = async (imageUrl: string, blurPx = 20) => {
+    const img = new Image();
+    img.src = imageUrl;
+
+    await new Promise((resolve, reject) => {
+        img.onload = () => resolve(img);
+        img.onerror = () => reject("Failed to load image");
+    });
+
+    const canvas = document.createElement("canvas");
+    canvas.width = img.naturalWidth;
+    canvas.height = img.naturalHeight;
+
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return null;
+
+    ctx.filter = `blur(${blurPx}px)`;
+    ctx.drawImage(img, 0, 0);
+
+    return canvas.toDataURL("image/png");
+}

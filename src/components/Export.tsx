@@ -1,8 +1,9 @@
 import { Button, Select, SimpleGrid, Stack } from "@mantine/core";
-import { toJpeg, toPng } from "html-to-image";
+// @ts-ignore
+import { toJpeg, toPng } from "dom-to-image-more";
 import { useRef, useState } from "react";
 import Card from "./card/Card";
-import type { FormsData } from "../App";
+import { CARD_HEIGHT, CARD_WIDTH, type FormsData } from "../App";
 
 const resolutionOptions = [
 	{ value: "0.5", label: "640 × 398" },
@@ -36,9 +37,10 @@ const Export = ({ exporting, setExporting, formData }: ExportI) => {
 
 		if (ref.current == null) {
 			if (times == 3) {
-				console.error("Failed to export: tried too many times")
-				alert("Error exporting image. Please try again or try smaller image resolution.");
 				setTimes(0);
+				setExporting(false);
+				console.error("Failed to download: tried too many times")
+				alert("Error downloading image. Please try again with a smaller image resolution, or switch to Chrome or Firefox.");
 				return;
 			}
 			setTimes((prev) => prev+1);
@@ -47,7 +49,11 @@ const Export = ({ exporting, setExporting, formData }: ExportI) => {
 		}
 
 		try {
-			const dataUrl = imageType == "png" ? await toPng(ref.current) : await toJpeg(ref.current, { quality: 90 });
+			const scale = Number(scaleMultiplier);
+			const width = CARD_WIDTH * scale;
+			const height = CARD_HEIGHT * scale;
+
+			const dataUrl = imageType == "png" ? await toPng(ref.current, { width: width, height: height }) : await toJpeg(ref.current, { width: width, height: height, quality: 90 });
 			const link = document.createElement("a");
 			link.download = `custom-card.${imageType}`;
 			link.href = dataUrl;
@@ -56,10 +62,10 @@ const Export = ({ exporting, setExporting, formData }: ExportI) => {
 			setTimes(0);
 		}
 		catch (err: any) {
-			console.error("Failed to export:", err);
-			alert(`Error exporting image. Please try again or try smaller image resolution.\n\nError message:\n${err.message}\n\nStack trace:\n${err.stack}`);
 			setExporting(false);
 			setTimes(0);
+			console.error("Failed to download:", err);
+			alert(`Error downloading image. Please try again with a smaller image resolution, or switch to Chrome or Firefox.\n\nError message:\n${err.message}\n\nStack trace:\n${err.stack}`);
 		}
 	}
 

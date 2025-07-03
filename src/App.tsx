@@ -5,7 +5,7 @@ import { Anchor, Box, Group, Stack, Title } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
 import FormContent from "./components/FormContent";
 import { IconBrandGithub } from '@tabler/icons-react';
-
+import "./fonts.css";
 import "./App.css";
 import { getFitImageToCardPercentage } from "./utils/utils";
 
