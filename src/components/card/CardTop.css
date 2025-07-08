@@ -43,6 +43,7 @@
     align-items: center;
     z-index: 1;
     background: linear-gradient(90deg, rgba(0, 0, 0, 0.2), rgba(229, 222, 208, 0.3));
+    overflow: hidden;
 }
 
 .card .card-top.render .middle {
@@ -52,6 +53,7 @@
 
 .card .card-top .middle .manufacturer {
     font-weight: 700;
+    white-space: nowrap;
 }
 
 .card .card-top .middle .model {

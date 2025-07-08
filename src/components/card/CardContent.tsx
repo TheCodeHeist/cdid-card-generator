@@ -13,7 +13,8 @@ interface CardContentI {
 
 const CardContent = ({ formData, exporting }: CardContentI) => {
     const topSpeed = valueToNumber(formData.topSpeed);
-    const zeroToSixty = valueToNumber(formData.zeroToSixty).toFixed(1);
+    let zeroToSixty: string | number = valueToNumber(formData.zeroToSixty);
+    zeroToSixty = zeroToSixty == 0 ? "N/A" :zeroToSixty.toFixed(1);
     const handling = valueToNumber(formData.handling);
     const rq = valueToNumber(formData.rq);
     const fuses = valueToNumber(formData.fuses);
