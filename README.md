@@ -1,17 +1,9 @@
-# Top Drives Card Generator
+# Car Driving Indonaesia Fantasy Card Generator (derived from Top Drives)
 
-A web-based editor built with **React** and **Typescript** to create custom cards for the **Top Drives** mobile game. Upload a car image, adjust the car stats, and export as high-quality PNG or JPG card.
+This is a personal generator fork for a fantasy card game.
 
-## ✨ Features
 
-- Upload background and logo images
-- Customize car stats (top speed, handling, RQ, etc.)
-- Automatic theme coloring based on car RQ
-- Export cards as PNG or JPG in multiple resolutions
-- Fully responsive UI with live preview
-- Built using Mantine UI and `html-to-image` for card export
-
-## 🚀 Installation
+## Installation
 
 ```bash
 git clone https://github.com/Jokairo/top-drives-card-generator.git
@@ -30,4 +22,4 @@ npm run build
 
 ---
 
-⚠️ This project is fan-made and not affiliated with or endorsed by Hutch or the official Top Drives game.
+⚠️ This project is a fork of .
