@@ -1,232 +1,237 @@
 /* Right side */
 .card .card-content .right-side {
-    position: absolute;
-    width: 263px;
-    height: 100%;
-    right: 0;
-    -webkit-backdrop-filter: blur(var(--blur));
-    backdrop-filter: blur(var(--blur));
+  position: absolute;
+  width: 263px;
+  height: 100%;
+  right: 0;
+  -webkit-backdrop-filter: blur(var(--blur));
+  backdrop-filter: blur(var(--blur));
 }
 .card .card-content .right-side.render {
-    -webkit-backdrop-filter: unset;
-    backdrop-filter: unset;
+  -webkit-backdrop-filter: unset;
+  backdrop-filter: unset;
 }
 
 .card .card-content .right-side .blur {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
-    background-color: black;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background-color: black;
 }
 
 .card .card-content .right-side .box-container {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    padding-top: 5px;
-    gap: 5px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-top: 5px;
+  gap: 5px;
 }
 
 .card .card-content .right-side .box {
-    width: 100%;
-    height: 170px;
-    z-index: 1;
-    position: relative;
+  width: 100%;
+  height: 170px;
+  z-index: 1;
+  position: relative;
 }
 
 .card .card-content .right-side .box .values {
-    display: flex;
-    width: 100%;
-    height: 100%;
-    flex-direction: column;
-    background: linear-gradient(90deg, rgba(0,0,0,0.2), rgba(229,222,208,0.5));
-    flex-direction: column;
-    justify-content: center;
-    align-items: end;
-    width: 100%;
-    height: 170px;
-    font-family: "Roboto Condensed", sans-serif;
-    line-height: .99;
-    color: white;
-    z-index: 99;
-    position: relative;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.2),
+    rgba(229, 222, 208, 0.5)
+  );
+  flex-direction: column;
+  justify-content: center;
+  align-items: end;
+  width: 100%;
+  height: 170px;
+  font-family: "Roboto Condensed", sans-serif;
+  line-height: 0.99;
+  color: white;
+  z-index: 99;
+  position: relative;
 }
 
 .card .card-content .right-side .box .value {
-    font-weight: 700;
-    font-size: 90px;
-    margin-right: 18px;
-    z-index: 1;
+  font-weight: 700;
+  font-size: 90px;
+  margin-right: 18px;
+  z-index: 1;
 }
 
 .card .card-content .right-side .box .label {
-    font-weight: 400;
-    font-size: 45px;
-    margin-right: 18px;
-    z-index: 1;
+  font-weight: 400;
+  font-size: 45px;
+  margin-right: 18px;
+  z-index: 1;
 }
 
 .card .card-content .right-side .box.bottom .value {
-    font-weight: 400;
-    font-size: 92px;
-    margin-right: 18px;
-    z-index: 99;
+  font-weight: 400;
+  font-size: 92px;
+  margin-right: 18px;
+  z-index: 99;
 }
 
 .card .card-content .right-side .box.bottom .fade {
-    position: absolute;
-    width: 1300px;
-    height: 134px;
-    left: -1000;
-    bottom: 0;
-    background: linear-gradient(transparent, rgba(0, 0, 0, 0.5));
+  position: absolute;
+  width: 1300px;
+  height: 134px;
+  left: -1020px;
+  bottom: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.5));
 }
 
 /* Left side */
 .card .card-content .left-side {
-    position: absolute;
-    width: 135px;
-    height: 355px;
-    left: 0;
-    bottom: 0;
-    display: flex;
-    flex-direction: column;
-    z-index: 1;
+  position: absolute;
+  width: 135px;
+  height: 355px;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
 }
 
 .card .card-content .left-side .top {
-    width: 100%;
-    min-height: 150px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-family: "Roboto Condensed", sans-serif;
-    position: relative;
+  width: 100%;
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Roboto Condensed", sans-serif;
+  position: relative;
 }
 
 .card .card-content .left-side .top .right {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    transform: skewY(11deg);
-    z-index: 5;
-    background: var(--rq-color);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform: skewY(11deg);
+  z-index: 5;
+  background: var(--rq-color);
 }
 
 .card .card-content .left-side .top .middle {
-    position: absolute;
-    width: 100%;
-    height: 52%;
-    top: 50%;
-    background: rgb(80, 74, 70);
+  position: absolute;
+  width: 100%;
+  height: 52%;
+  top: 50%;
+  background: rgb(80, 74, 70);
 }
 
 .card .card-content .left-side .top .left {
-    position: absolute;
-    width: 100%;
-    height: 50%;
-    top: 50%;
-    transform: skewY(-11deg);
-    z-index: 4;
-    background: var(--rq-color);
-    opacity: 0.5;
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  top: 50%;
+  transform: skewY(-11deg);
+  z-index: 4;
+  background: var(--rq-color);
+  opacity: 0.5;
 }
 
 .card .card-content .left-side .top .value {
-    font-weight: 700;
-    font-size: 90px;
-    margin-bottom: 16px;
-    z-index: 10;
-    color: #383838;
+  font-weight: 700;
+  font-size: 90px;
+  margin-bottom: 16px;
+  z-index: 10;
+  color: #383838;
 }
 
 .card .card-content .left-side .bottom {
-    width: 100%;
-    height: 205px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-family: "Roboto Condensed", sans-serif;
-    line-height: 0.5;
-    background: rgba(80,74,70,1);
+  width: 100%;
+  height: 205px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-family: "Roboto Condensed", sans-serif;
+  line-height: 0.5;
+  background: rgba(80, 74, 70, 1);
 }
 
 .card .card-content .left-side .bottom .value {
-    font-weight: 700;
-    font-size: 90px;
-    margin-top: 70px;
+  font-weight: 700;
+  font-size: 90px;
+  margin-top: 70px;
 }
 
 .card .card-content .left-side .bottom .label {
-    width: 85px;
-    margin-top: 9px;
-    color: var(--rq-color);
+  width: 85px;
+  margin-top: 9px;
+  color: var(--rq-color);
 }
 
 /* Tyres */
 .card .card-content .tyres-label {
-    position: absolute;
-    left: 898;
-    bottom: 16;
-    z-index: 1;
+  position: absolute;
+  left: 898;
+  bottom: 16;
+  z-index: 1;
 }
 
-.card .card-content .tyres-label span, .tyres-value span {
-    font-family: "Roboto Condensed", sans-serif;
-    font-weight: 300;
-    font-size: 45px;
-    color: white;
+.card .card-content .tyres-label span,
+.tyres-value span {
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: 300;
+  font-size: 45px;
+  color: white;
 }
 
 .card .card-content .tyres-value {
-    position: absolute;
-    left: 385;
-    width: 500px;
-    bottom: 16;
-    text-align: right;
-    z-index: 1;
+  position: absolute;
+  left: 385;
+  width: 500px;
+  bottom: 16;
+  text-align: right;
+  z-index: 1;
 }
 
-.card .card-content .tyres-value span{
-    font-weight: 400;
+.card .card-content .tyres-value span {
+  font-weight: 400;
 }
 
 /* Stars */
 .card .card-content .stars {
-    position: absolute;
-    left: 176;
-    bottom: 30;
-    display: flex;
-    gap: 25px;
-    z-index: 1;
+  position: absolute;
+  left: 40;
+  bottom: 30;
+  display: flex;
+  gap: 25px;
+  z-index: 1;
 }
 
 .card .card-content .stars .star {
-    width: 50px;
-    height: 50px;
-    stroke: rgba(0,0,0,0.5);
-    color: var(--rq-color);
-    stroke-width: 120px;
-    filter: drop-shadow(0 0px 10px rgba(0,0,0,0.25));
-    opacity: 0.2;
+  width: 50px;
+  height: 50px;
+  stroke: rgba(0, 0, 0, 0.5);
+  color: var(--rq-color);
+  stroke-width: 120px;
+  filter: drop-shadow(0 0px 10px rgba(0, 0, 0, 0.25));
+  opacity: 0.2;
 }
 .card .card-content .stars .star.visible {
-    opacity: 1;
+  opacity: 1;
 }
 
 /* Wrench */
 .card .card-content .wrench {
-    position: absolute;
-    left: 177;
-    bottom: 103;
-    opacity: 0.2;
-    z-index: 1;
+  position: absolute;
+  left: 177;
+  bottom: 103;
+  opacity: 0.2;
+  z-index: 1;
 }
 
 .card .card-content .wrench svg {
-    width: 145px;
+  width: 145px;
 }
