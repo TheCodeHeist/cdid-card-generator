@@ -20,6 +20,6 @@ export default defineConfig({
         distPath: {
             root: 'build',
         },
-        assetPrefix: '/top-drives-card-generator/',
+        assetPrefix: '/cdid-card-generator/',
     },
 });
